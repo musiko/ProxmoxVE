@@ -57,16 +57,26 @@ export OPENCV_FFMPEG_LOGLEVEL=8
 export HAILORT_LOGGER_PATH=NONE
 msg_ok "Setup environment"
 
-msg_info "Downloading Frigate source"
-fetch_and_deploy_gh_release "frigate" "blakeblackshear/frigate" "tarball" "latest" "/opt/frigate"
-# cd ~
-# RELEASE=$(curl -s https://api.github.com/repos/blakeblackshear/frigate/releases/latest | jq -r '.tag_name')
-# mkdir -p /opt/frigate/models
-# curl -fsSL "https://github.com/blakeblackshear/frigate/archive/refs/tags/${RELEASE}.tar.gz" -o "frigate.tar.gz"
-# $STD tar -xzf frigate.tar.gz -C /opt/frigate --strip-components 1
-# rm -rf frigate.tar.gz
-# cd /opt/frigate
-msg_ok "Downloaded Frigate source"
+# msg_info "Downloading Frigate source"
+# fetch_and_deploy_gh_release "frigate" "blakeblackshear/frigate" "tarball" "latest" "/opt/frigate"
+# # cd ~
+# # RELEASE=$(curl -s https://api.github.com/repos/blakeblackshear/frigate/releases/latest | jq -r '.tag_name')
+# # mkdir -p /opt/frigate/models
+# # curl -fsSL "https://github.com/blakeblackshear/frigate/archive/refs/tags/${RELEASE}.tar.gz" -o "frigate.tar.gz"
+# # $STD tar -xzf frigate.tar.gz -C /opt/frigate --strip-components 1
+# # rm -rf frigate.tar.gz
+# # cd /opt/frigate
+# msg_ok "Downloaded Frigate source"
+
+# Use dev branch instead of latest release tag to get the nvidia-pyindex fix
+msg_info "Downloading Frigate source (dev branch)"
+cd ~
+mkdir -p /opt/frigate
+curl -fsSL "https://github.com/blakeblackshear/frigate/archive/refs/heads/dev.tar.gz" -o "frigate-dev.tar.gz"
+$STD tar -xzf frigate-dev.tar.gz -C /opt/frigate --strip-components 1
+rm -rf frigate-dev.tar.gz
+cd /opt/frigate
+msg_ok "Downloaded Frigate source (dev branch)"
 
 msg_info "Building Nginx with Custom Modules"
 #Overwrite version check as debian 12 LXC doesn't have the debian.list file for some reason
