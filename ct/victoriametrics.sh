@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/remz1337/ProxmoxVE/remz/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/musiko/ProxmoxVE/remz/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: Slaviša Arežina (tremor021)
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://github.com/VictoriaMetrics/VictoriaMetrics
 
 APP="VictoriaMetrics"
@@ -47,11 +47,11 @@ function update_script() {
     if [[ -f /etc/systemd/system/victoriametrics-logs.service ]]; then
       vmlogs_filename=$(curl -fsSL "https://api.github.com/repos/VictoriaMetrics/VictoriaLogs/releases/latest" |
         jq -r '.assets[].name' |
-        grep -E '^victoria-logs-linux-amd64-v[0-9.]+\.tar\.gz$')  
+        grep -E '^victoria-logs-linux-amd64-v[0-9.]+\.tar\.gz$')
       vlutils_filename=$(curl -fsSL "https://api.github.com/repos/VictoriaMetrics/VictoriaLogs/releases/latest" |
         jq -r '.assets[].name' |
         grep -E '^vlutils-linux-amd64-v[0-9.]+\.tar\.gz$')
-        
+
       fetch_and_deploy_gh_release "victorialogs" "VictoriaMetrics/VictoriaLogs" "prebuild" "latest" "/opt/victoriametrics" "$vmlogs_filename"
       fetch_and_deploy_gh_release "vlutils" "VictoriaMetrics/VictoriaLogs" "prebuild" "latest" "/opt/victoriametrics" "$vlutils_filename"
     fi

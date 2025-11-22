@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: bvdberg01
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://sabre.io/baikal/
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -58,7 +58,7 @@ cat <<EOF >/etc/apache2/sites-available/baikal.conf
     RewriteRule /.well-known/caldav  /dav.php [R=308,L]
     RewriteCond %{REQUEST_URI} ^/dav.php$ [NC]
     RewriteRule ^(.*)$ /dav.php/ [R=301,L]
-        
+
     <Directory /opt/baikal/html>
         Options FollowSymLinks
         AllowOverride All

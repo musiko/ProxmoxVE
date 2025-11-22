@@ -3,7 +3,7 @@
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT
-# https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 
 clear
 if ! command -v pveversion >/dev/null 2>&1; then
@@ -124,4 +124,4 @@ info "Successfully Transferred Data."
 
 # Use to copy all data from a Home Assistant Container LXC to a Home Assistant Core LXC
 # run from the Proxmox Shell
-# bash -c "$(curl -fsSL https://raw.githubusercontent.com/remz1337/ProxmoxVE/remzmain/tools/copy-data//home-assistant-container-copy-data-home-assistant-core.sh)"
+# bash -c "$(curl -fsSL https://raw.githubusercontent.com/musiko/ProxmoxVE/remzmain/tools/copy-data//home-assistant-container-copy-data-home-assistant-core.sh)"

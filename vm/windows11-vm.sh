@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/remz1337/ProxmoxVE/remz/misc/nvidia.func)
+source <(curl -s https://raw.githubusercontent.com/musiko/ProxmoxVE/remz/misc/nvidia.func)
 # Copyright (c) 2021-2024 tteck
 # Author: remz1337
 # Co-Author: tteck (tteckster)
 # License: MIT
-# https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 
 function header_info {
   clear
   cat <<"EOF"
  _       ___           __                      ______   _    ____  ___
 | |     / (_)___  ____/ /___ _      _______   <  <  /  | |  / /  |/  /
-| | /| / / / __ \/ __  / __ \ | /| / / ___/   / // /   | | / / /|_/ / 
-| |/ |/ / / / / / /_/ / /_/ / |/ |/ (__  )   / // /    | |/ / /  / /  
-|__/|__/_/_/ /_/\__,_/\____/|__/|__/____/   /_//_/     |___/_/  /_/   
+| | /| / / / __ \/ __  / __ \ | /| / / ___/   / // /   | | / / /|_/ /
+| |/ |/ / / / / / /_/ / /_/ / |/ |/ (__  )   / // /    | |/ / /  / /
+|__/|__/_/_/ /_/\__,_/\____/|__/|__/____/   /_//_/     |___/_/  /_/
 
 EOF
 }
@@ -283,7 +283,7 @@ function advanced_settings() {
   else
     exit-script
   fi
-  
+
   if RAM_SIZE=$(whiptail --backtitle "Proxmox VE Helper Scripts" --inputbox "Allocate RAM in MiB" 8 58 $var_ram --title "RAM" --cancel-button Exit-Script 3>&1 1>&2 2>&3); then
     if [ -z $RAM_SIZE ]; then
       RAM_SIZE="$var_ram"
@@ -563,7 +563,7 @@ done
 
 msg_info "Creating a Windows 11 VM with GPU passthrough"
 
-source <(curl -s https://raw.githubusercontent.com/remz1337/ProxmoxVE/remz/misc/nvidia.func)
+source <(curl -s https://raw.githubusercontent.com/musiko/ProxmoxVE/remz/misc/nvidia.func)
 pci_num=$(select_nvidia_gpu_vm)
 
 #pvesm alloc $STORAGE $VMID $DISK0 4M 1>&/dev/null
@@ -580,7 +580,7 @@ qm create $VMID -agent 1${MACHINE} -bios ovmf${CPU_TYPE} -cores $CORE_COUNT -cpu
   -smbios1 uuid=$(od -x /dev/urandom | head -1 | awk '{OFS="-"; print $2$3,$4,$5,$6,$7$8$9}') \
   -boot order="sata0;scsi0" \
   -hostpci0 0000:${pci_num},pcie=1 \
-  -description "<div align='center'><a href='https://Helper-Scripts.com'><img src='https://raw.githubusercontent.com/remz1337/ProxmoxVE/main/misc/images/logo-81x112.png'/></a>
+  -description "<div align='center'><a href='https://Helper-Scripts.com'><img src='https://raw.githubusercontent.com/musiko/ProxmoxVE/main/misc/images/logo-81x112.png'/></a>
 
   # Windows 11 VM
 

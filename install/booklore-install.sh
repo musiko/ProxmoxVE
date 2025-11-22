@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: MickLesk (CanbiZ)
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://github.com/booklore-app/BookLore
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -51,7 +51,7 @@ cat <<EOF >/opt/booklore_storage/.env
 DATABASE_URL=jdbc:mariadb://localhost:3306/$DB_NAME
 DATABASE_USERNAME=$DB_USER
 DATABASE_PASSWORD=$DB_PASS
-BOOKLORE_PORT=6060 
+BOOKLORE_PORT=6060
 
 BOOKLORE_DATA_PATH=/opt/booklore_storage/data
 BOOKLORE_BOOKS_PATH=/opt/booklore_storage/books

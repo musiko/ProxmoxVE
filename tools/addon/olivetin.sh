@@ -3,17 +3,17 @@
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT
-# https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 
 function header_info {
   clear
   cat <<"EOF"
-   ____  ___          _______     
-  / __ \/ (_)   _____/_  __(_)___ 
+   ____  ___          _______
+  / __ \/ (_)   _____/_  __(_)___
  / / / / / / | / / _ \/ / / / __ \
 / /_/ / / /| |/ /  __/ / / / / / /
-\____/_/_/ |___/\___/_/ /_/_/ /_/ 
-                                  
+\____/_/_/ |___/\___/_/ /_/_/ /_/
+
 EOF
 }
 

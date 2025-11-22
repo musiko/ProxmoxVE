@@ -4,7 +4,7 @@
 # Author: tteck (tteckster)
 # Co-Author: remz1337
 # License: MIT
-# https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 
 source /dev/stdin <<< "$FUNCTIONS_FILE_PATH"
 color
@@ -31,7 +31,7 @@ $STD apt-get install -y \
   libxkbcommon-x11-0 \
   libpangocairo-1.0-0 \
   libasound2 \
-  gpg  
+  gpg
 msg_ok "Installed Dependencies"
 
 msg_info "Installing Node.js"
@@ -45,7 +45,7 @@ msg_ok "Installed Node.js"
 msg_info "Installing Chrome"
 $STD apt-get update
 $STD apt-get install -y wget gnupg procps
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - 
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 $STD apt-get update
 $STD apt-get install -y --no-install-recommends \
@@ -96,7 +96,7 @@ EOF
 msg_ok "Installed Epicgames-freegames"
 
 msg_info "Creating Services"
-cat <<EOF >/etc/systemd/system/epicgames-freegames.service 
+cat <<EOF >/etc/systemd/system/epicgames-freegames.service
 [Unit]
 Description="Epic Games free games"
 Requires=epicgames-freegames.timer

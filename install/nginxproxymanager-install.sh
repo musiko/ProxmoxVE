@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 Community-Scripts ORG
 # Author: tteck (tteckster) | Co-Author: CrazyWolf13
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://nginxproxymanager.com/
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"

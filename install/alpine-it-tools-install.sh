@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: nicedevil007 (NiceDevil)
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://it-tools.tech/
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -31,7 +31,7 @@ server {
   server_name localhost;
   root /usr/share/nginx/html;
   index index.html;
-  
+
   location / {
       try_files $uri $uri/ /index.html;
   }

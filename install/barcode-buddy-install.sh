@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: bvdberg01
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://github.com/Forceu/barcodebuddy
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -46,7 +46,7 @@ cat <<EOF >/etc/apache2/sites-available/barcodebuddy.conf
 <VirtualHost *:80>
     ServerName barcodebuddy
     DocumentRoot /opt/barcodebuddy
-    
+
     <Directory /opt/barcodebuddy>
         Options FollowSymLinks
         AllowOverride All

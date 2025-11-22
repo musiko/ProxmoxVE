@@ -4,17 +4,17 @@
 # Author: tteck (tteckster)
 # Co-Author: remz1337
 # License: MIT
-# https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 
 function header_info() {
   clear
   cat <<"EOF"
-    _   __      _     ___          ____       _                     
+    _   __      _     ___          ____       _
    / | / /   __(_)___/ (_)___ _   / __ \_____(_)   _____  __________
   /  |/ / | / / / __  / / __ `/  / / / / ___/ / | / / _ \/ ___/ ___/
- / /|  /| |/ / / /_/ / / /_/ /  / /_/ / /  / /| |/ /  __/ /  (__  ) 
-/_/ |_/ |___/_/\__,_/_/\__,_/  /_____/_/  /_/ |___/\___/_/  /____/  
-                                                                    
+ / /|  /| |/ / / /_/ / / /_/ /  / /_/ / /  / /| |/ /  __/ /  (__  )
+/_/ |_/ |___/_/\__,_/_/\__,_/  /_____/_/  /_/ |___/\___/_/  /____/
+
 EOF
 }
 BL=$(echo "\033[36m")
@@ -35,7 +35,7 @@ function install_nvidia_drivers_lxc() {
   else
     echo -e "${BL}[Info]${GN} Installing Nvidia to ${BL}$container${CL} : ${GN}$name${CL} - ${YW}[No disk info for ${os}]${CL}\n"
   fi
-  
+
   pct exec "$container" -- bash -c "apt install -yq libglvnd-dev libvulkan1 pkg-config"
   pct push "$container" $EXE_FILE /tmp/$EXE_FILE
   pct exec "$container" -- bash -c "bash /tmp/$EXE_FILE -q -a -n -s --no-kernel-module"
@@ -51,7 +51,7 @@ if ! (whiptail --backtitle "Proxmox VE Helper Scripts" --title "Nvidia Drivers" 
   exit
 fi
 
-source <(curl -s https://raw.githubusercontent.com/remz1337/ProxmoxVE/remz/misc/nvidia.func)
+source <(curl -s https://raw.githubusercontent.com/musiko/ProxmoxVE/remz/misc/nvidia.func)
 nvidia_installed=$(check_nvidia_drivers_installed)
 if [ $nvidia_installed == 1 ]; then
   check_nvidia_drivers_version

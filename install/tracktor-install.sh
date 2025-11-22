@@ -2,7 +2,7 @@
 
 # Copyright (c) 2025 Community Scripts ORG
 # Author: CrazyWolf13
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://tracktor.bytedge.in
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -28,7 +28,7 @@ DB_PATH=/opt/tracktor-data/tracktor.db
 UPLOADS_DIR="/opt/tracktor-data/uploads"
 LOG_DIR="/opt/tracktor-data/logs"
 # If server host is not set by default it will run on all interfaces - 0.0.0.0
-# SERVER_HOST="" 
+# SERVER_HOST=""
 SERVER_PORT=3000
 PORT=3000
 # Set this if you want to secure your endpoints otherwise default will be "*"

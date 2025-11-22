@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: vhsdream
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://github.com/PatcMmon/PatchMon
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -146,11 +146,11 @@ server {
         proxy_cache_bypass \$http_upgrade;
         proxy_read_timeout 300s;
         proxy_connect_timeout 75s;
- 
+
         # Enable cookie passthrough
         proxy_pass_header Set-Cookie;
         proxy_cookie_path / /;
- 
+
         # Preserve original client IP
         proxy_set_header X-Original-Forwarded-For \$http_x_forwarded_for;
         if (\$request_method = 'OPTIONS') {
@@ -171,7 +171,7 @@ server {
         proxy_cache_bypass \$http_upgrade;
         proxy_read_timeout 300s;
         proxy_connect_timeout 75s;
- 
+
         # Preserve original client IP
         proxy_set_header X-Original-Forwarded-For \$http_x_forwarded_for;
         if (\$request_method = 'OPTIONS') {
@@ -185,7 +185,7 @@ server {
         expires 1y;
         add_header Cache-Control "public, immutable";
     }
- 
+
     # Health check endpoint
     location /health {
         proxy_pass http://127.0.0.1:3399/health;

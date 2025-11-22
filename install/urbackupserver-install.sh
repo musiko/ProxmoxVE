@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: Kristian Skov
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://www.urbackup.org/
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -26,7 +26,7 @@ cat <<EOF | sudo tee /etc/apt/sources.list.d/home-uroni.sources >/dev/null
 Types: deb
 URIs: http://download.opensuse.org/repositories/home:/uroni/Debian_12/
 Suites: ./
-Components: 
+Components:
 Signed-By: /usr/share/keyrings/home-uroni.gpg
 EOF
 $STD apt update

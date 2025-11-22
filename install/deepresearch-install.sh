@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 remz1337
 # Authors: remz1337
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://github.com/Alibaba-NLP/DeepResearch
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -48,7 +48,7 @@ wget -q https://bootstrap.pypa.io/get-pip.py -O get-pip.py
 $STD python3 get-pip.py "pip"
 msg_ok "Installed Pip"
 
-source <(curl -s https://raw.githubusercontent.com/remz1337/ProxmoxVE/remz/misc/nvidia.func)
+source <(curl -s https://raw.githubusercontent.com/musiko/ProxmoxVE/remz/misc/nvidia.func)
 nvidia_installed=$(check_nvidia_drivers_installed)
 if [ $nvidia_installed == 1 ]; then
   check_nvidia_drivers_version

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/remz1337/ProxmoxVE/remz/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/musiko/ProxmoxVE/remz/misc/build.func)
 # Copyright (c) 2021-2025 Community-Script ORG
 # Author: tteck (tteckster) | Co-Author: CrazyWolf13
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://nginxproxymanager.com/
 
 APP="Nginx Proxy Manager"
@@ -144,7 +144,7 @@ EOF
   cd /app
   $STD yarn install --network-timeout 600000
   msg_ok "Initialized Backend"
-  
+
   msg_info "Updating Certbot"
   [ -f /etc/apt/trusted.gpg.d/openresty-archive-keyring.gpg ] && rm -f /etc/apt/trusted.gpg.d/openresty-archive-keyring.gpg
   [ -f /etc/apt/sources.list.d/openresty.list ] && rm -f /etc/apt/sources.list.d/openresty.list

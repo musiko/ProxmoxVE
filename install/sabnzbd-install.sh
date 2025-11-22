@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster) | Co-Author: MickLesk (CanbiZ)
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://sabnzbd.org/
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -26,7 +26,7 @@ cat <<EOF >/etc/apt/sources.list.d/non-free.sources
 Types: deb
 URIs: http://deb.debian.org/debian/
 Suites: trixie
-Components: non-free 
+Components: non-free
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 EOF
 $STD apt update

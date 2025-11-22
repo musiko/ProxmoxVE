@@ -3,7 +3,7 @@
 # Copyright (c) 2021-2025 community-scripts ORG
 # Authors: MickLesk (CanbiZ)
 # Co-Authors: remz1337
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://github.com/coder/code-server
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -28,7 +28,7 @@ systemctl enable -q --now code-server@"$USER"
 cat <<EOF >~/.config/code-server/config.yaml
 bind-addr: 0.0.0.0:8680
 auth: none
-password: 
+password:
 cert: false
 EOF
 systemctl restart code-server@"$USER"

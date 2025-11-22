@@ -2,12 +2,12 @@
 
 # Author: remz1337
 # License: MIT
-# https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 
 # This function sets up the Container OS by generating the locale, setting the timezone, and checking the network connection
 default_setup() {
   msg_info "Setting up Container"
-  pct exec "$CTID" -- /bin/bash -c "source <(wget -qLO - https://raw.githubusercontent.com/remz1337/ProxmoxVE/remz/misc/install.func) && color && verb_ip6 && catch_errors && setting_up_container && network_check && update_os" || exit
+  pct exec "$CTID" -- /bin/bash -c "source <(wget -qLO - https://raw.githubusercontent.com/musiko/ProxmoxVE/remz/misc/install.func) && color && verb_ip6 && catch_errors && setting_up_container && network_check && update_os" || exit
   pct exec $CTID -- /bin/bash -c "apt install -y curl &>/dev/null"
   msg_ok "Set up Container"
 }
@@ -129,7 +129,7 @@ fi
 if [[ "${NVIDIA_PASSTHROUGH}" == "yes" ]]; then
   #Fix container unable to start issue by commenting out /dev/dri lines (from tteck's setup)
   sed -e '/^dev/ s/^#*/#/' -i /etc/pve/lxc/${CTID}.conf
-  source <(curl -s https://raw.githubusercontent.com/remz1337/ProxmoxVE/remz/misc/nvidia.func)
+  source <(curl -s https://raw.githubusercontent.com/musiko/ProxmoxVE/remz/misc/nvidia.func)
   if [ -n "$SPINNER_PID" ] && ps -p $SPINNER_PID > /dev/null; then kill $SPINNER_PID > /dev/null; fi
   check_nvidia_drivers_version
   select_nvidia_gpu

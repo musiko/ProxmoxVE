@@ -2,7 +2,7 @@
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: MickLesk
 # License: MIT
-# https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 
 function header_info {
   clear

@@ -1,7 +1,7 @@
 <div align="center">
   <p align="center">
     <a href="#">
-      <img src="https://raw.githubusercontent.com/remz1337/ProxmoxVE/remz/misc/images/logo.png" height="100px" />
+      <img src="https://raw.githubusercontent.com/musiko/ProxmoxVE/remz/misc/images/logo.png" height="100px" />
     </a>
   </p>
 </div>
@@ -15,16 +15,16 @@
     </a>
     <a href="https://discord.gg/3AnUqsXnmK">
       <img src="https://img.shields.io/badge/Discord-7289da?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
-    </a> 
+    </a>
     <a href="https://ko-fi.com/community_scripts">
       <img src="https://img.shields.io/badge/Support-FF5F5F?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Donate" />
     </a>
     <a href="https://github.com/community-scripts/ProxmoxVE/blob/main/.github/CONTRIBUTOR_AND_GUIDES/CONTRIBUTING.md">
       <img src="https://img.shields.io/badge/Contribute-ff4785?style=for-the-badge&logo=git&logoColor=white" alt="Contribute" />
-    </a> 
+    </a>
     <a href="https://github.com/community-scripts/ProxmoxVE/blob/main/.github/CONTRIBUTOR_AND_GUIDES/USER_SUBMITTED_GUIDES.md">
       <img src="https://img.shields.io/badge/Guides-0077b5?style=for-the-badge&logo=read-the-docs&logoColor=white" alt="Guides" />
-    </a> 
+    </a>
     <a href="https://github.com/community-scripts/ProxmoxVE/blob/main/CHANGELOG.md">
       <img src="https://img.shields.io/badge/Changelog-6c5ce7?style=for-the-badge&logo=git&logoColor=white" alt="Changelog" />
     </a>
@@ -47,6 +47,7 @@
 - **Community-driven**: Actively maintained and improved by the Proxmox community.
 
 ---
+
 ## ✅ Requirements
 
 Ensure your system meets the following prerequisites:
@@ -74,6 +75,7 @@ To install the Proxmox Helper Scripts, follow these steps:
 We appreciate any contributions to the project—whether it's bug reports, feature requests, documentation improvements, or spreading the word. Your involvement helps keep the project alive and sustainable.
 
 ## 💖 Donate to Support the Project
+
 - **Ko-Fi for Community Edition**: [Donate to support this project](https://ko-fi.com/community_scripts) – Donations go towards maintaining the project, testing infrastructure, and charity (cancer research, hospice care). 30% of the funds will be donated to charity.
 
 ---
@@ -114,7 +116,9 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 # Disclaimer - remz1337's fork
+
 This fork aims to add support for Nvidia GPU. The scripts are not guaranteed to work with every hardware, but they have been tested with the following hardware:
+
 - CPU: AMD Ryzen 5 3600
 - Compute GPU (LXC): Nvidia T600
 - Gaming GPU (VM): Nvidia RTX 2060
@@ -122,10 +126,13 @@ This fork aims to add support for Nvidia GPU. The scripts are not guaranteed to 
 - RAM: 4x8GB HyperX (non ECC)
 
 ## Diagnostics API
+
 All diagnostic functions have been disabled.
 
 # Extra scripts
+
 Here's a shortlist of scripts/apps that did not get merged upstream (tteck) for various reasons:
+
 - <a href="https://github.com/CollaboraOnline/online">Collabora Online</a>
 - <a href="https://github.com/remz1337/Backup2Azure">Backup2Azure</a>
 - <a href="https://github.com/blakeblackshear/frigate">Frigate</a> with Nvidia GPU passthrough (older cards such as Pascal may not work)
@@ -136,7 +143,9 @@ Here's a shortlist of scripts/apps that did not get merged upstream (tteck) for 
 - Windows 11 Gaming VM
 
 # Extra configurations
+
 I have added some configuration options to streamline deployment of certain services in my environment. When building a container, I run an extra script to do that additional configuration. That script is `ct/post_create_lxc.sh`, which is called at the end of the `build_container()` function (in `build.func`). This can be used to:
+
 - mount a shared folder by adding this configuration to the LXC:`mp0: /mnt/pve/share/public,mp=/mnt/pve/share`
 - setup postfix service to run as a satellite, leveraging a single postfix LXC to send all emails
 - passthrough a Nvidia GPU
@@ -144,27 +153,38 @@ I have added some configuration options to streamline deployment of certain serv
 Some of these configurations leverage settings that can be found in `/etc/pve-helper-scripts.conf`.
 
 # Deploying services
+
 To create a new LXC, run the following command directly on the host:
+
 ```
 bash -c "$(wget -qLO - https://github.com/remz1337/ProxmoxVE/raw/remz/ct/<app>.sh)"
 ```
+
 and replace `<app>` by the service you wish to deploy, eg. `.../remz/ct/frigate.sh)`
 
 # Updating services
+
 To update an existing LXC, run the following command directly on the host, where `<ID>` is the LXC ID (eg. 100, 101...) :
+
 ```
 pct exec <ID> -- /usr/bin/update
 ```
+
 Alternatively, you can update from within the LXC by running the same command used to create the machine but inside it (not on the host). Easiest way is to log in from the host using the `pct enter` command with the machine ID :
+
 ```
 pct enter <ID>
 bash -c "$(wget -qLO - https://github.com/remz1337/ProxmoxVE/raw/remz/ct/<app>.sh)"
 ```
 
 # Installing and updating Nvidia drivers across host and containers
+
 To install or update latest Nvidia drivers, run the following command directly on the host:
+
 ```
 bash -c "$(wget -qLO - https://github.com/remz1337/ProxmoxVE/raw/remz/misc/nvidia-drivers-host.sh)"
 ```
+
 # Donate to Support this fork
+
 - **Ko-Fi for remz1337's fork**: [Donate to support this fork](https://ko-fi.com/remz1337)

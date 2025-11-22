@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: MickLesk
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://www.kimai.org/
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -89,7 +89,7 @@ cat <<EOF >/etc/apache2/sites-available/kimai.conf
         AllowOverride All
         Require all granted
     </Directory>
-  
+
     ErrorLog /var/log/apache2/error.log
     CustomLog /var/log/apache2/access.log combined
 

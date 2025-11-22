@@ -3,7 +3,7 @@
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT
-# https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 
 # Use to copy all data from a Zwavejs2MQTT LXC to a Z-wave JS UI LXC
 # run from the Proxmox Shell
@@ -130,4 +130,4 @@ info "Successfully Transferred Data."
 
 # Use to copy all data from a Zwavejs2MQTT LXC to a Z-wave JS UI LXC
 # run from the Proxmox Shell
-# bash -c "$(curl -fsSL https://raw.githubusercontent.com/remz1337/ProxmoxVE/remzmain/tools/copy-data//zwavejs2mqtt-copy-data-zwavejsui.sh)"
+# bash -c "$(curl -fsSL https://raw.githubusercontent.com/musiko/ProxmoxVE/remzmain/tools/copy-data//zwavejs2mqtt-copy-data-zwavejsui.sh)"

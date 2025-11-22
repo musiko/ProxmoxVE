@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: bvdberg01
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://github.com/pterodactyl/panel
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -116,7 +116,7 @@ cat <<EOF >/etc/apache2/sites-available/pterodactyl.conf
     DocumentRoot /opt/pterodactyl-panel/public
 
     AllowEncodedSlashes On
-    
+
     php_value upload_max_filesize 100M
     php_value post_max_size 100M
 

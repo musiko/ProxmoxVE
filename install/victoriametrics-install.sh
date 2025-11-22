@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: Slaviša Arežina (tremor021)
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://github.com/VictoriaMetrics/VictoriaMetrics
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -30,7 +30,7 @@ read -r -p "${TAB3}Would you like to add VictoriaLogs? <y/N> " prompt
 if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
   vmlogs_filename=$(curl -fsSL "https://api.github.com/repos/VictoriaMetrics/VictoriaLogs/releases/latest" |
     jq -r '.assets[].name' |
-    grep -E '^victoria-logs-linux-amd64-v[0-9.]+\.tar\.gz$')  
+    grep -E '^victoria-logs-linux-amd64-v[0-9.]+\.tar\.gz$')
   vlutils_filename=$(curl -fsSL "https://api.github.com/repos/VictoriaMetrics/VictoriaLogs/releases/latest" |
     jq -r '.assets[].name' |
     grep -E '^vlutils-linux-amd64-v[0-9.]+\.tar\.gz$')

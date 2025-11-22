@@ -3,7 +3,7 @@
 # Copyright (c) 2021-2025 tteck
 # Author: tteck
 # Co-Author: MickLesk (Canbiz)
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 # Source: https://www.mysql.com/products/community | https://www.phpmyadmin.net
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -63,7 +63,7 @@ msg_ok "MySQL Server configured"
 
 read -r -p "${TAB3}Would you like to add PhpMyAdmin? <y/N> " prompt
 if [[ ${prompt,,} =~ ^(y|yes)$ ]]; then
-  bash -c "$(curl -fsSL https://raw.githubusercontent.com/remz1337/ProxmoxVE/remz/tools/addon/phpmyadmin.sh)"
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/musiko/ProxmoxVE/remz/tools/addon/phpmyadmin.sh)"
 fi
 
 msg_info "Start Service"

@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/remz1337/ProxmoxVE/remz/misc/build.func)
+source <(curl -s https://raw.githubusercontent.com/musiko/ProxmoxVE/remz/misc/build.func)
 # Copyright (c) 2021-2024 community-scripts ORG
 # Author: remz1337
 # License: MIT
-# https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 
 function header_info {
   clear
   cat <<"EOF"
-    ___         __  __               __  _ __  
+    ___         __  __               __  _ __
    /   | __  __/ /_/ /_  ___  ____  / /_(_) /__
   / /| |/ / / / __/ __ \/ _ \/ __ \/ __/ / //_/
- / ___ / /_/ / /_/ / / /  __/ / / / /_/ / ,<   
-/_/  |_\__,_/\__/_/ /_/\___/_/ /_/\__/_/_/|_|  
-                                               
+ / ___ / /_/ / /_/ / / /  __/ / / / /_/ / ,<
+/_/  |_\__,_/\__/_/ /_/\___/_/ /_/\__/_/_/|_|
+
 EOF
 }
 header_info
@@ -85,7 +85,7 @@ if [[ "${RELEASE}" != "$(cat /opt/${APP}_version.txt)" ]] || [[ ! -f /opt/${APP}
   pip install . &>/dev/null
   msg_ok "Installed Python Dependencies"
 
-  msg_info "Updating ${APP} to v${RELEASE} (Patience)" 
+  msg_info "Updating ${APP} to v${RELEASE} (Patience)"
   cp -r /opt/authentik/authentik/blueprints /opt/authentik/blueprints
   bash /opt/authentik/lifecycle/ak migrate &>/dev/null
   echo "${RELEASE}" >/opt/${APP}_version.txt

@@ -2,9 +2,9 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: BvdBerg01 | Co-Author: remz1337
-# License: MIT | https://github.com/remz1337/ProxmoxVE/raw/remz/LICENSE
+# License: MIT | https://github.com/musiko1210/ProxmoxVE/raw/remz/LICENSE
 
-source <(curl -fsSL https://raw.githubusercontent.com/remz1337/ProxmoxVE/refs/heads/remz/misc/core.func)
+source <(curl -fsSL https://raw.githubusercontent.com/musiko/ProxmoxVE/refs/heads/remz/misc/core.func)
 
 function header_info {
   clear
@@ -169,7 +169,7 @@ for container in $CHOICE; do
   fi
 
   #2) Extract service build/update resource requirements from config/installation file
-  script=$(curl -fsSL https://raw.githubusercontent.com/remz1337/ProxmoxVE/remz/ct/${service}.sh)
+  script=$(curl -fsSL https://raw.githubusercontent.com/musiko/ProxmoxVE/remz/ct/${service}.sh)
 
   #2.1) Check if the script downloaded successfully
   if [ $? -ne 0 ]; then
