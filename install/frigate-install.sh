@@ -178,6 +178,16 @@ msg_info "Building HailoRT"
 $STD bash /opt/frigate/docker/main/install_hailort.sh
 cp -a /opt/frigate/docker/main/rootfs/. /
 sed -i '/^.*unset DEBIAN_FRONTEND.*$/d' /opt/frigate/docker/main/install_deps.sh
+
+# Fix Intel GPU package conflict issue - add removal of old package before dpkg install
+sed -i '/^    dpkg -i \*\.deb$/i\    # Remove old intel-opencl-icd to avoid conflicts with new packages\n    apt-get remove -y intel-opencl-icd || true\n' /opt/frigate/docker/main/install_deps.sh
+
+# Add force-overwrite flag to dpkg command
+sed -i 's/^    dpkg -i \*\.deb$/    dpkg -i --force-overwrite *.deb || dpkg -i --force-overwrite *.deb/' /opt/frigate/docker/main/install_deps.sh
+
+# Add dependency fix after dpkg install
+sed -i '/^    dpkg -i --force-overwrite \*\.deb || dpkg -i --force-overwrite \*\.deb$/a\    \n    # Fix any broken dependencies\n    apt-get install -f -y || true' /opt/frigate/docker/main/install_deps.sh
+
 echo "libedgetpu1-max libedgetpu/accepted-eula boolean true" | debconf-set-selections
 echo "libedgetpu1-max libedgetpu/install-confirm-max boolean true" | debconf-set-selections
 $STD bash /opt/frigate/docker/main/install_deps.sh
