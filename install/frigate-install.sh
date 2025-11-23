@@ -72,7 +72,7 @@ msg_ok "Setup environment"
 msg_info "Downloading Frigate source (dev branch)"
 cd ~
 mkdir -p /opt/frigate
-curl -fsSL "https://github.com/blakeblackshear/frigate/archive/refs/heads/dev.tar.gz" -o "frigate-dev.tar.gz"
+curl -fsSL "https://github.com/musiko/frigate/archive/refs/heads/dev.tar.gz" -o "frigate-dev.tar.gz"
 $STD tar -xzf frigate-dev.tar.gz -C /opt/frigate --strip-components 1
 rm -rf frigate-dev.tar.gz
 cd /opt/frigate
