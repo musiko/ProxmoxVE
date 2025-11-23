@@ -229,7 +229,7 @@ base_settings() {
 
   #Custom variables for remz1337's fork
   FW=${var_fw:-"1"}
-  TAGS="remz1337;${var_tags:-}"
+  TAGS="${var_tags:-}"
   ADD_SSH_USER=${var_add_ssh_user:-"no"}
   SHARED_MOUNT=${var_shared_mount:-"no"}
   POSTFIX_SAT=${var_postfix_sat:-"no"}
@@ -378,7 +378,7 @@ exit_script() {
 advanced_settings() {
   whiptail --backtitle "Proxmox VE Helper Scripts" --msgbox --title "Here is an instructional tip:" "To make a selection, use the Spacebar." 8 58
   # Setting Default Tag for Advanced Settings
-  TAGS="remz1337;${var_tags:-}"
+  TAGS="${var_tags:-}"
   CT_DEFAULT_TYPE="${CT_TYPE}"
   CT_TYPE=""
   while [ -z "$CT_TYPE" ]; do

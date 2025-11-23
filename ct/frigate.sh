@@ -6,7 +6,7 @@ source <(curl -fsSL https://raw.githubusercontent.com/musiko/ProxmoxVE/remz/misc
 # Source: https://frigate.video/
 
 APP="Frigate"
-var_tags="${var_tags:-nvr}"
+var_tags="${var_tags:-nvr;frigate}"
 var_cpu="${var_cpu:-4}"
 var_ram="${var_ram:-4096}"
 var_disk="${var_disk:-50}"
